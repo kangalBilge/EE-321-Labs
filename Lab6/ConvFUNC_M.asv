@@ -1,0 +1,8 @@
+% Convolution function using matrix multiplication
+function [y] = ConvFUNC_M(x,h)
+    % Define the convolution matrix
+    M = toeplitz([h(1) zeros(1, length(x) - 1, )], [h zeros(1, length(x) - 1)]);
+    
+    % Compute the convolution using matrix multiplication
+    y = x* M;
+end
